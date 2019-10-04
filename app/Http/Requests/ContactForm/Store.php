@@ -27,6 +27,8 @@ class Store extends FormRequest
             'name' => ['required',new \App\Rules\MinimumWords(2)],
             'email'=> ['required', 'email', 'regex:/(.*)go\.id|ac\.id|or\.id$/i'],
             'message' => ['required','min:20'],
+            'kategori' => ['required'],
+            'noTlp' => [''],
         ];
     }
 }
