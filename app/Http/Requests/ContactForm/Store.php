@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\ContactForm;
 
+use App\Rules\MinimumWords;
 use Illuminate\Foundation\Http\FormRequest;
 
 class Store extends FormRequest
@@ -24,9 +25,9 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required',new \App\Rules\MinimumWords(2)],
-            'email'=> ['required', 'email', 'regex:/(.*)go\.id|ac\.id|or\.id$/i'],
-            'message' => ['required','min:20'],
+            'name' => ['required', new MinimumWords(2)],
+            'email' => ['required', 'email', 'regex:/(.*)go\.id|ac\.id|or\.id$/i'],
+            'message' => ['required', 'min:20'],
             'kategori' => ['required'],
             'noTlp' => [''],
         ];
