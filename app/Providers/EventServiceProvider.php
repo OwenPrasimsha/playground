@@ -11,19 +11,18 @@ class EventServiceProvider extends ServiceProvider
      *
      * @var array
      */
-
-   protected $listen = [
-       \App\Events\ContactFormSubmitted::class => [
-           \App\Listeners\SendContactFormNotification::class,
-//           "App\Listeners\AnotherListener",
-       ],
-   ];
-
+    protected $listen = [
+        \App\Events\ContactFormSubmitted::class => [
+            \App\Listeners\SendContactFormNotification::class,
+            //           "App\Listeners\AnotherListener",
+        ],
+    ];
 
     public function shouldDiscoverEvents()
     {
         return true;
     }
+
     /**
      * Register any events for your application.
      */

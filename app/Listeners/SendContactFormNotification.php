@@ -25,8 +25,8 @@ class SendContactFormNotification
 //        $admin = User::first();
 //        $admin->notify(new \App\Notifications\ContactFormSubmitted($event->contactForm));
 
-        $invoice = ContactForm::latest();
-        $invoice->notify(new \App\Notifications\ContactFormSubmitted($event->contactForm));
+//        $invoice = ContactForm::latest()->first();
+        $event->contactForm->notify(new \App\Notifications\ContactFormSubmitted($event->contactForm));
 
 //        Notification::route('mail', 'taylor@example.com')
 //            ->route('nexmo', '5555555555')
